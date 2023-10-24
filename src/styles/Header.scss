@@ -1,0 +1,24 @@
+@import 'App';
+
+header {
+    @include width;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    nav {
+        padding: 15px;
+
+        ul {
+            list-style-type: none;
+            display: flex;
+            gap: 0 20px;
+
+            a {
+                text-decoration: none;
+                color: inherit;
+                font-weight: bold;
+            }
+        }
+    }
+}
