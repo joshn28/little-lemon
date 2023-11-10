@@ -1,0 +1,45 @@
+@import 'App';
+
+#testimonials {
+    width: 100%;
+    background-color: $primary-color-2;
+    padding: 15vh 0;
+
+    > div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px 0
+    }
+}
+
+.testimonials-card-container {
+    @include width();
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 240px);
+    justify-content: space-between;
+    gap: 50px 0;
+}
+
+.testimonial-card {
+    background-color: $secondary-color-3;
+    padding: 20px;
+    border-radius: 8px;
+
+    > div {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+    }
+
+    > p {
+        font-size: 16px;
+    }
+}
+
+.avatar-icon {
+    height: 48px;
+    width: auto;
+    margin-right: 10px;
+}
