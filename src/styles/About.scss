@@ -1,0 +1,51 @@
+@import 'App';
+
+#about {
+    @include width();
+    display: flex;
+    justify-content: center;
+    padding: 10vh 0;
+    gap: 0 100px;
+
+    div {
+        width: 50%;
+
+        h2,
+        h3 {
+            font-family: 'markazi', 'sans-serif';
+            margin: 0;
+            padding: 0;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 40pt;
+            color: $primary-color-1;
+        }
+
+        h3 {
+            font-size: 20pt;
+            margin-bottom: 20px;
+        }
+
+        &:last-of-type {
+            position: relative;
+        }
+    }
+
+    img {
+        position: absolute;
+        width: 100%;
+        border-radius: 8px;
+
+        &:first-of-type {
+            z-index: 2;
+            right: -150px;
+        }
+
+        &:last-of-type {
+            z-index: -1;
+            bottom: -150px;
+        }
+    }
+}
