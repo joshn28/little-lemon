@@ -1,0 +1,44 @@
+@import 'App';
+
+footer {
+    background-color: $secondary-color-3;
+    height: 45vh;
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.footer-container {
+    @include width();
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 10vw);
+    grid-auto-flow: column;
+    justify-content: space-between;
+
+    > ul {
+        margin: 0;
+        padding: 0;
+
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        li {
+            font-size: 16pt;
+            line-height: 1.5;
+            list-style-type: none;
+        }
+    }
+}
+
+.footer-heading {
+    color: $primary-color-1;
+    font-weight: bold;
+}
