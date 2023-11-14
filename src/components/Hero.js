@@ -1,4 +1,5 @@
 import food from "../assets/restaurantfood.jpg";
+import { Link } from "react-router-dom";
 
 function Hero() {
     return (
@@ -13,7 +14,7 @@ function Hero() {
                         focused on traditional <br />
                         recipes served with a modern <br />
                         twist.</p>
-                        <button>Reserve a Table</button>
+                        <Link to='/reserve-a-table'><button>Reserve a Table</button></Link>
                     </div>
                     <div className="crop-container">
                         <img src={food} alt="restaurant food" />

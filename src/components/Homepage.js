@@ -3,6 +3,7 @@ import Highlights from './Highlights/Highlights';
 import Testimonials from './Testimonials/Testimonials';
 import About from './About';
 import Footer from './Footer';
+import '../styles/Homepage.scss';
 
 function Homepage() {
     return (
