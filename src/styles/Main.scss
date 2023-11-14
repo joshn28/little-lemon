@@ -1,0 +1,129 @@
+// Hero Section
+
+#hero-section {
+    background-color: $primary-color-1;
+    color: $secondary-color-3;
+    padding: 20px 0;
+    max-height: 40vh;
+
+    h2,
+    h3 {
+        font-family: 'markazi', 'sans-serif';
+        margin: 0;
+        padding: 0;
+        font-weight: 400;
+    }
+
+    h2 {
+        font-size: 40pt;
+        color: $primary-color-2;
+    }
+
+    h3 {
+        font-size: 20pt;
+        margin-bottom: 10px;
+    }
+
+    button {
+        margin-top: 10px;
+    }
+
+    .crop-container {
+        position: relative;
+        top: 20px;
+        border-radius: 10px;
+        height: 45vh;
+        overflow: hidden;
+
+        img {
+            position: relative;
+            bottom: 35px;
+            height: 50vh;
+            width: 18vw;
+        }
+    }
+}
+
+#hero-container {
+    @include width();
+    display: flex;
+    justify-content: space-between;
+}
+
+// Highlights section
+
+#highlights {
+    @include width();
+    margin: 10vh auto;
+}
+
+.highlights-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    h2 {
+        font-size: 30pt;
+        font-weight: bold;
+    }
+}
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(3, 325px);
+    margin: 0 auto;
+    justify-content: space-between;
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    background-color: $secondary-color-3;
+    border-radius: 16pt;
+    overflow: hidden;
+
+    img {
+        height: 250px;
+        object-fit: cover;
+    }
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    margin: 20px auto;
+    gap: 30px 0;
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+}
+
+.card-info {
+    font-weight: bold;
+
+    p:first-of-type {
+        font-size: 18pt;
+    }
+}
+
+.food-price {
+    color: $secondary-color-1;
+}
+
+.card-description {
+    color: $primary-color-1;
+    font-size: 16px;
+}
+
+.card-button {
+    text-decoration: none;
+    background: none;
+    padding: 0;
+    display: flex;
+    gap: 5px;
+}
