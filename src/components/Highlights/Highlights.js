@@ -1,12 +1,12 @@
 import HighlightCard from "./HighlightCard";
-import bruchetta from "../assets/bruchetta.svg"
+import bruchetta from "../../assets/bruchetta.svg"
 
 const foodData = [
     {
         name: "Greek salad",
         price: 12.99,
         description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
-        image: require('../assets/greek-salad.jpg'),
+        image: require('../../assets/greek-salad.jpg'),
     },
     {
         name: "Bruchetta",
@@ -18,7 +18,7 @@ const foodData = [
         name: "Lemon Dessert",
         price: 5.00,
         description: "This comes straight from grandma's recipe book, every last ingredient has been sourced and is as authentic as can be imagined.",
-        image: require('../assets/lemon-dessert.jpg'),
+        image: require('../../assets/lemon-dessert.jpg'),
     }
 ];
 
