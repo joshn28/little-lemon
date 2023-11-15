@@ -1,0 +1,50 @@
+@import 'App';
+
+.form-container {
+    background-image: url('../assets//restaurant.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 100px 0;
+}
+
+form {
+    width: 20%;
+    background-color: rgba($primary-color-1, 0.8);
+    color: $secondary-color-3;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px 0;
+    border-radius: 6px;
+    padding: 50px;
+
+    h1 {
+        margin: 0;
+        color: $primary-color-2;
+    }
+
+    div {
+        display: flex;
+        flex-direction: column;
+        width: max-content;
+    }
+
+    input,
+    select {
+        font-family: inherit;
+        font-size: inherit;
+        padding: 10px;
+        border: none;
+        background-color: $secondary-color-3;
+        border-radius: 6px;
+    }
+
+    label {
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: max-content;
+        margin: 0 auto;
+    }
+}
