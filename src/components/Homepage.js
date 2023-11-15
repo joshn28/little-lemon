@@ -2,8 +2,9 @@ import Hero from './Hero';
 import Highlights from './Highlights/Highlights';
 import Testimonials from './Testimonials/Testimonials';
 import About from './About';
-import Footer from './Footer';
-import '../styles/Homepage.scss';
+import '../styles/Main.scss';
+import '../styles/Testimonials.scss';
+import '../styles/About.scss';
 
 function Homepage() {
     return (
@@ -12,7 +13,6 @@ function Homepage() {
             <Highlights />
             <Testimonials />
             <About />
-            <Footer />
         </main>
     );
 }

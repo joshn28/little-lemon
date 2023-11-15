@@ -1,9 +1,12 @@
+@import 'App';
+
 #about {
     @include width();
     display: flex;
     justify-content: center;
     padding: 10vh 0;
     gap: 0 100px;
+    margin-bottom: 100px;
 
     div {
         width: 50%;
