@@ -1,7 +1,12 @@
 import { useState } from 'react';
 import '../../styles/BookingPage.scss';
 
-function BookingForm() {
+function minDate() {
+    const today = new Date();
+    return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+}
+
+function BookingForm(props) {
     const [form, setForm] = useState({
         date: '',
         time: '17:00',
@@ -9,18 +14,15 @@ function BookingForm() {
         occasion: 'Birthday',
     });
 
-    const availableTimes = [
-        '17:00', '18:00', '19:00', '20:00', '21:00', '22:00'
-    ];
-
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(form)
+        console.log(form);
     }
 
-    function minDate() {
-        let today = new Date();
-        return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+    function setDate(e) {
+        const date = e.target.value;
+        setForm({ ...form, date});
+        props.dispatch({ date });
     }
 
     return (
@@ -28,12 +30,12 @@ function BookingForm() {
             <h1>Reserve a table</h1>
             <div>
                 <label htmlFor="res-date">Choose a date</label>
-                <input type="date" id="res-date" value={form.date} onChange={(e) => setForm({ ...form, date: e.target.value })} min={minDate()}/>
+                <input type="date" id="res-date" value={form.date} onChange={setDate} min={minDate()}/>
             </div>
             <div>
                 <label htmlFor="res-time">Choose time</label>
                 <select name="res-time" id="res-time" value={form.time} onChange={(e) => setForm({ ...form, time: e.target.value })}>
-                    {availableTimes.map((time, i) => <option key={i}>{time}</option>)}
+                    {props.availableTimes.map((time, i) => <option key={i}>{time}</option>)}
                 </select>
             </div>
             <div>

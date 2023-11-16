@@ -1,10 +1,10 @@
 import BookingForm from "./BookingForm";
 
-function BookingPage() {
+function BookingPage(props) {
     return(
         <>
             <div className="form-container">
-                <BookingForm />
+                <BookingForm {...props} />
             </div>
         </>
     );
