@@ -5,18 +5,32 @@ import Footer from './components/Footer';
 import './styles/App.scss';
 import { Routes, Route } from 'react-router-dom';
 import { useReducer } from 'react';
+import { fetchAPI, submitAPI } from './api/fakeAPI';
 
 function updateTimes(state, action) {
-  return state;
+  switch (action.type) {
+    case "update_times":
+      const date = action.date;
+      const times = fetchAPI(date);
+
+      if (times.toString() !== state.toString()) {
+        return times;
+      }
+      return state;
+    default:
+      break;
+  }
 }
 
-function initialTimes(times) {
-  return times;
+function initialTimes() {
+  const todaysDate = new Date();
+  const dateFormatted = `${todaysDate.getFullYear()}-${todaysDate.getMonth() + 1}-${todaysDate.getDate()}`;
+  const possibleTimes = fetchAPI(dateFormatted);
+  return possibleTimes;
 }
 
 function App() {
-  const times = ['17:00', '18:00', '19:00', '20:00', '21:00', '22:00'];
-  const [availableTimes, dispatch] = useReducer(updateTimes, times, initialTimes);
+  const [availableTimes, dispatch] = useReducer(updateTimes, null, initialTimes);
 
   return (
     <>
