@@ -9,20 +9,20 @@ function minDate() {
 function BookingForm(props) {
     const [form, setForm] = useState({
         date: '',
-        time: '17:00',
+        time: '',
         guests: 1,
         occasion: 'Birthday',
     });
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(form);
+        props.submitForm(form);
     }
 
     function setDate(e) {
         const date = e.target.value;
         setForm({ ...form, date});
-        props.dispatch({ date });
+        props.dispatch({ type: 'update_times', date });
     }
 
     return (
@@ -33,8 +33,9 @@ function BookingForm(props) {
                 <input type="date" id="res-date" value={form.date} onChange={setDate} min={minDate()}/>
             </div>
             <div>
-                <label htmlFor="res-time">Choose time</label>
-                <select name="res-time" id="res-time" value={form.time} onChange={(e) => setForm({ ...form, time: e.target.value })}>
+                <label htmlFor="res-time">Choose a time</label>
+                <select disabled={!form.date} name="res-time" id="res-time" defaultValue="default" onChange={(e) => setForm({ ...form, time: e.target.value })}>
+                    <option value="default" disabled>-- select a time --</option>
                     {props.availableTimes.map((time, i) => <option key={i}>{time}</option>)}
                 </select>
             </div>
@@ -49,7 +50,7 @@ function BookingForm(props) {
                     <option>Anniversary</option>
                 </select>
             </div>
-            <button>Make your reservation</button>
+            <button disabled={!form.date || !form.time}>Make your reservation</button>
         </form>
     );
 }
