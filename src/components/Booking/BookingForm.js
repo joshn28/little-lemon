@@ -34,7 +34,7 @@ function BookingForm(props) {
             </div>
             <div>
                 <label htmlFor="res-time">Choose a time</label>
-                <select disabled={!form.date} name="res-time" id="res-time" defaultValue="default" onChange={(e) => setForm({ ...form, time: e.target.value })}>
+                <select disabled={!form.date} name="res-time" id="res-time" value={form.time || "default"} onChange={(e) => setForm({ ...form, time: e.target.value })}>
                     <option value="default" disabled>-- select a time --</option>
                     {props.availableTimes.map((time, i) => <option key={i}>{time}</option>)}
                 </select>
