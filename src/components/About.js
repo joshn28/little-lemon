@@ -12,8 +12,8 @@ function About() {
                 </p>
             </div>
             <div>
-                <img src={imageA} alt="Two restaurant chefs conversing" />
-                <img src={imageB} alt="Two restaurant chefs smiling" />
+                <img src={imageA} alt="Two restaurant chefs conversing" loading='lazy' />
+                <img src={imageB} alt="Two restaurant chefs smiling" loading='lazy' />
             </div>
         </section>
     );

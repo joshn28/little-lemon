@@ -1,5 +1,7 @@
 import food from "../assets/restaurantfood.jpg";
 import { Link } from "react-router-dom";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
 function Hero() {
     return (
@@ -17,7 +19,7 @@ function Hero() {
                         <Link to='/reserve-a-table'><button>Reserve a Table</button></Link>
                     </div>
                     <div className="crop-container">
-                        <img src={food} alt="restaurant food" />
+                        <LazyLoadImage src={food} alt="restaurant food" effect="blur" />
                     </div>
                 </div>
             </section>
