@@ -13,10 +13,12 @@ header {
             display: flex;
             gap: 0 20px;
 
+            li,
             a {
                 text-decoration: none;
                 color: inherit;
                 font-weight: bold;
+                cursor: pointer;
             }
         }
     }
