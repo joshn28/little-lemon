@@ -16,7 +16,8 @@ function BookingForm(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        props.submitForm(form);
+        console.log(form)
+        // props.submitForm(form);
     }
 
     function setDate(e) {
@@ -41,7 +42,7 @@ function BookingForm(props) {
             </div>
             <div>
                 <label htmlFor="guests"># of guests</label>
-                <input type="number" placeholder="1" min="1" max="10" id="guests" value={form.guests} onChange={(e) => setForm({ ...form, guests: e.target.value })}/>
+                <input type="number" placeholder="1" min="1" max="10" id="guests" required value={form.guests} onChange={(e) => setForm({ ...form, guests: e.target.value })}/>
             </div>
             <div>
                 <label htmlFor="occasion">Occasion</label>
@@ -50,7 +51,7 @@ function BookingForm(props) {
                     <option>Anniversary</option>
                 </select>
             </div>
-            <button disabled={!form.date || !form.time}>Make your reservation</button>
+            <button disabled={!form.date || !form.time || !form.guests}>Make your reservation</button>
         </form>
     );
 }
