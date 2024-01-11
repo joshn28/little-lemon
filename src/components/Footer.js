@@ -20,7 +20,7 @@ function Footer() {
                     <ul>
                         <li className="footer-heading">Contact</li>
                         <ul>
-                            <li>123 Fake Street, Fake City, CH</li>
+                            <li>123 Street, City, State</li>
                             <li>555-555-555</li>
                             <li>LittleLemon@fake.com</li>
                         </ul>
