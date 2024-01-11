@@ -1,4 +1,4 @@
-import BookingPage from './components/Booking/BookingPage';
+import BookingPage from './routes/Booking/BookingPage';
 import Header from './components/Header';
 import Homepage from './components/Homepage';
 import Footer from './components/Footer';
@@ -6,7 +6,7 @@ import './styles/App.scss';
 import { Routes, Route, useNavigate } from 'react-router-dom';
 import { useReducer } from 'react';
 import { fetchAPI, submitAPI } from './api/fakeAPI';
-import ConfirmedBooking from './components/Booking/ConfirmedBooking';
+import ConfirmedBooking from './routes/Booking/ConfirmedBooking';
 
 function updateTimes(state, action) {
   switch (action.type) {
