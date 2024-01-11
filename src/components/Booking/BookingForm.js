@@ -16,8 +16,7 @@ function BookingForm(props) {
 
     function handleSubmit(e) {
         e.preventDefault();
-        console.log(form)
-        // props.submitForm(form);
+        props.submitForm(form);
     }
 
     function setDate(e) {
