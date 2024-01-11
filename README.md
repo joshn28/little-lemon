@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Little Lemon
+
+A React web application for Little Lemon restaurant allowing customers to learn about the restaurant and make table reservations.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
