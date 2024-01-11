@@ -6,7 +6,7 @@
     background-color: $primary-color-1;
     color: $secondary-color-3;
     padding: 20px 0;
-    max-height: 40vh;
+    max-height: min-content;
 
     h2,
     h3 {
@@ -26,30 +26,34 @@
         margin-bottom: 10px;
     }
 
+    a {
+        text-decoration: none;
+    }
+
     button {
         margin-top: 10px;
     }
+}
 
-    .crop-container {
+.crop-container {
+    position: absolute;
+    top: 20px;
+    right: 0;
+    border-radius: 10px;
+    height: 400px;
+    overflow: hidden;
+
+    img {
         position: relative;
-        top: 20px;
-        border-radius: 10px;
-        height: 45vh;
-        overflow: hidden;
-
-        img {
-            position: relative;
-            bottom: 35px;
-            height: 50vh;
-            width: 18vw;
-        }
+        bottom: 35px;
+        height: 500px;
+        width: auto;
     }
 }
 
 #hero-container {
     @include width();
-    display: flex;
-    justify-content: space-between;
+    position: relative;
 }
 
 // Highlights section
@@ -63,6 +67,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 
     h2 {
         font-size: 30pt;
@@ -72,8 +77,9 @@
 
 .cards-container {
     display: grid;
-    grid-template-columns: repeat(3, 325px);
     margin: 0 auto;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 17vw));
+    grid-auto-flow: row;
     justify-content: space-between;
 }
 
@@ -85,7 +91,8 @@
     overflow: hidden;
 
     img {
-        height: 250px;
+        height: max(20vh, 25vh);
+        width: 100%;
         object-fit: cover;
     }
 }
@@ -128,4 +135,84 @@
     padding: 0;
     display: flex;
     gap: 5px;
+}
+
+@media only screen and (max-width: 1700px) {
+    #hero-container, #highlights {
+        width: 70%
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    #hero-container {
+        @include mobile-width();
+        justify-content: space-around;
+    }
+
+    #highlights {
+        @include mobile-width();
+    }
+
+    .highlights-heading {
+        justify-content: space-around;
+    }
+
+    .cards-container {
+        justify-content: space-evenly;
+        gap: 50px 0;
+    }
+
+    .crop-container {
+        height: 400px;
+
+        img {
+            height: 450px;
+        }
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #hero-container {
+        flex-direction: column;
+        gap: 50px 0;
+        align-items: center;
+        text-align: center;
+
+        button {
+            display: block;
+            margin: 10px auto;
+        }
+    }
+
+    #highlights {
+        margin-top: 40px;
+    }
+
+    .highlights-heading {
+        flex-direction: column;
+        text-align: center;
+        justify-content: stretch;
+        align-items: center;
+        margin-bottom: 100px;
+    }
+
+    .cards-container {
+        justify-content: center;
+    }
+
+    .crop-container {
+        position: relative;
+        top: 50px;
+        display: block;
+        margin: 0 auto;
+        width: fit-content;
+
+        img {
+            width: 100%;
+        }
+    }
 }

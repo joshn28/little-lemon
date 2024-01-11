@@ -18,3 +18,25 @@
         border-radius: 6px;
     }
 }
+
+@media(min-width: 600px) and (max-width: 1024px) {
+    .message-container {
+        p {
+            font-size: 4em;
+            text-align: center;
+            width: 80%;
+            padding: 20px 10px;
+        }
+    }
+}
+
+@media(max-width: 320px) {
+    .message-container {
+        p {
+            font-size: 2em;
+            text-align: center;
+            width: 80%;
+            padding: 20px 10px;
+        }
+    }
+}

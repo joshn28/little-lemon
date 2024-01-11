@@ -8,8 +8,16 @@ $secondary-color-3: #EDEFEE;
 $secondary-color-4: #333;
 
 @mixin width() {
-    width: 55%;
+    width: 55vw;
     margin: 0 auto;
+}
+
+@mixin mobile-width() {
+    width: 95%;
+}
+
+@mixin laptop-width() {
+    width: 80%;
 }
 
 body {

@@ -1,22 +1,23 @@
 footer {
     background-color: $secondary-color-3;
-    height: 45vh;
-    display: flex;
-    justify-content: space-between;
+    height: min-content;
+    padding: 50px 0;
 }
 
 .footer-container {
     @include width();
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
 }
 
 .footer-links {
     display: grid;
     grid-template-columns: repeat(auto-fit, 10vw);
     grid-auto-flow: column;
+    gap: 0 50px;
     justify-content: space-between;
+    justify-items: center;
 
     > ul {
         margin: 0;
@@ -38,4 +39,34 @@ footer {
 .footer-heading {
     color: $primary-color-1;
     font-weight: bold;
+}
+
+@media only screen and (max-width: 1700px) {
+    .footer-container {
+        @include laptop-width();
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .footer-container {
+        width: 100%;
+    }
+
+    .footer-links {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media only screen and (max-width: 900px) {
+    .footer-container {
+        width: 90%;
+        flex-direction: column;
+    }
+
+    .footer-links {
+        grid-template-rows: repeat(auto-fit, min-content);
+        grid-auto-flow: unset;
+        grid-template-columns: none;
+        justify-items: stretch;
+    }
 }

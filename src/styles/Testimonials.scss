@@ -3,7 +3,7 @@
 #testimonials {
     width: 100%;
     background-color: $primary-color-1;
-    padding: 10vh 0 15vh;
+    padding: 5vh 0 10vh;
 
     > div {
         display: flex;
@@ -20,10 +20,10 @@
 }
 
 .testimonials-card-container {
-    @include width();
+    width: 60%;
     display: grid;
     grid-template-columns: repeat(auto-fit, 240px);
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 50px 0;
 }
 
@@ -47,4 +47,25 @@
     height: 48px;
     width: auto;
     margin-right: 10px;
+}
+
+@media only screen and (max-width: 1700px) {
+    .testimonials-card-container {
+        @include laptop-width();
+    }
+}
+
+@media only screen and (max-width: 1023px) and (min-width: 601px) {
+    .testimonials-card-container {
+        justify-content: center;
+        grid-template-columns: repeat(auto-fit, minmax(240px, auto));
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .testimonials-card-container {
+        width: 100%;
+        margin: 0;
+        justify-content: center;
+    }
 }
