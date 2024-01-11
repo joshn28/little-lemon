@@ -1,5 +1,5 @@
 import { render, screen, fireEvent } from '@testing-library/react';
-import BookingForm from './components/Booking/BookingForm';
+import BookingForm from './routes/Booking/BookingForm';
 
 test('Renders the BookingForm heading', () => {
   render(<BookingForm availableTimes={[]} />);
