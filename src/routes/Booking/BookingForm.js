@@ -3,7 +3,11 @@ import '../../styles/BookingPage.scss';
 
 function minDate() {
     const today = new Date();
-    return `${today.getFullYear()}-${today.getMonth() + 1}-${today.getDate()}`;
+    const month = today.getMonth() + 1;
+    if (month < 10) {
+        return `${today.getFullYear()}-0${month}-${today.getDate()}`;
+    }
+    return `${today.getFullYear()}-${month}-${today.getDate()}`;
 }
 
 function BookingForm(props) {
