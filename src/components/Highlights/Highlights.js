@@ -4,7 +4,7 @@ const foodData = [
     {
         name: "Greek salad",
         price: 12.99,
-        description: "The famous greek salad of crispy lettuce, peppers, olives and our Chicago style feta cheese, garnished with crunchy garlic and rosemary croutons.",
+        description: "The famous greek salad of crispy lettuce, peppers, olives and cheese, garnished with crunchy garlic and rosemary croutons.",
         image: require('../../assets/greek-salad.jpg'),
     },
     {
